@@ -4,19 +4,27 @@
 module.exports = {
   siteMetadata: {
     title: `nabate`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [{
-    resolve: 'gatsby-source-wordpress',
-    options: {
-      "url": "nabate.local"
-    }
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-google-gtag", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        url: "nabate.local",
+      },
     },
-    __key: "images"
-  }]
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-netlify",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-google-gtag",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+  ],
 };
